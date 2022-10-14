@@ -14,4 +14,5 @@ angular
             scope.nav_selected = 'project';
         }
     }
-}]);
+}])
+.filter('spells', function() { return function(project) { return project.find(item => item.name === 'spellbook').items.find(item => item.name === 'models').items}});

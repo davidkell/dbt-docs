@@ -12,7 +12,8 @@
             </a>
         </li>
 
-        <li>
+        <!-- [Spellbook] Only show project by default -->
+        <!-- <li>
             <div class="switches">
                 <div class="switch ">
                     <span
@@ -33,10 +34,21 @@
                     </span>
                 </div>
             </div>
-        </li>
+        </li> -->
 
         <li>
             <div class="menu" ng-show="nav_selected == 'project'">
+                <!-- [Spellbook] Move spells to the top -->
+                <strong>Spells</strong>
+                <ul>
+                    <!-- [Spellbook] Only list the spells -->
+                    <model-tree-line
+                        item="item"
+                        resource-type="model"
+                        ng-repeat="item in tree.project | spells"></model-tree-line>
+                </ul>
+                <br />
+
                 <div ng-show="tree.sources.length > 0">
                     <strong>Sources</strong>
                     <ul style="display: block">
@@ -69,14 +81,6 @@
                     </ul>
                     <br />
                 </div>
-
-                <strong>Projects</strong>
-                <ul>
-                    <model-tree-line
-                        item="item"
-                        resource-type="model"
-                        ng-repeat="item in tree.project"></model-tree-line>
-                </ul>
             </div>
         </li>
 

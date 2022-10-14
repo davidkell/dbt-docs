@@ -8,8 +8,17 @@
                         <div class="detail-body">
                             <dl class="detail"
                                 ng-repeat="(k, v) in meta">
-                                <dt class="detail-label">{{ k }}</dt>
-                                <dd class="detail-value">{{ v }}</dd>
+                                <div ng-if="['contibutors', 'contributors'].includes(k)">
+                                    <dt class="detail-label">{{ k }}</dt>
+                                    <dd class="detail-value" style="display: flex; flex-direction: row; align-items: center;" ng-repeat="wizard in v.split(', ')">
+                                        <img style="height: 2.5rem; border-radius: 9999px;" src="https://github.com/{{ wizard }}.png"/>
+                                        <a style="margin-left: 0.5rem;" href="https://github.com/{{ wizard }}">{{ wizard }}</a>
+                                    </dd>
+                                </div>
+                                <div ng-if="!['contibutors', 'contributors'].includes(k)">
+                                    <dt class="detail-label">{{ k }}</dt>
+                                    <dd class="detail-value">{{ v }}</dd>
+                                </div>
                             </dl>
                         </div>
                     </div>
