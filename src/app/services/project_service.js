@@ -19,7 +19,8 @@ angular
 .module('dbt')
 .factory('project', ['$q', '$http', function($q, $http) {
 
-    var TARGET_PATH = '';
+    // Enables Dune to serve spellbook at dune.com/spellbook with Next.js re-writes
+    var TARGET_PATH = '/spellbook/';
 
     var service = {
         project: {},
