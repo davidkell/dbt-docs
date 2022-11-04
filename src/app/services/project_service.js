@@ -115,10 +115,11 @@ angular
     }
 
     service.loadProject = function() {
-        var cache_bust = "?cb=" + (new Date()).getTime();
+        // Dune custom: Vercel implements last modified + etags for new versions of manifest.json
+        // var cache_bust = "?cb=" + (new Date()).getTime();
         var promises = [
-            loadFile('manifest', TARGET_PATH + "manifest.json" + cache_bust),
-            loadFile('catalog', TARGET_PATH + "catalog.json" + cache_bust),
+            loadFile('manifest', TARGET_PATH + "manifest.json" /* + cache_bust */),
+            loadFile('catalog', TARGET_PATH + "catalog.json" /* + cache_bust */),
         ]
 
         $q.all(promises).then(function(files) {
