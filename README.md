@@ -1,4 +1,18 @@
-# dbt docs
+# Spellbook (dbt-docs fork)
+
+A fork of dbt-docs for Dune Spellbook.
+
+For the diff, view the `main` vs `spellbook` branch.
+
+To push a new template for spellbook docs:
+- Setup locally (see instructions below)
+- Run `npx webpack` to build the `index.html` file
+- Overwrite the template in [spellbook-deploy](https://github.com/duneanalytics/spellbook-deploy)
+- Push new template, triggers new build
+
+Original README for dbt docs...
+
+## dbt docs
 
 [dbt](https://github.com/dbt-labs/dbt-core) helps analysts write reliable, modular code using a workflow that closely mirrors software development.
 
