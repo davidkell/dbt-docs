@@ -18,7 +18,8 @@ angular
                 // handle "contributors" mispelling and array/comma delimited string cases
                 let c = model.meta.contributors || model.meta.contibutors
                 c = Array.isArray(c) ? c : (c || '').split(', ')
-                return c
+                // e.g. de-duplicate MSilb7 -> msilb7
+                return c.map(n => n.toLowerCase())
             }).flat()
 
             const stats = Object.entries(_.countBy(contributors)).map(([name, spells]) => ({ name, spells}))
