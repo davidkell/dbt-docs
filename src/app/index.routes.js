@@ -19,6 +19,9 @@ const templates = {
     exposure: require('./docs/exposure.html'),
     metric: require('./docs/metric.html'),
     operation: require('./docs/operation.html'),
+
+    // Dune extensions
+    spellcasters: require('./spellcasters/spellcasters.html'),
 }
 
 angular
@@ -140,5 +143,13 @@ angular
             params: {
                 unique_id: {type: 'string'}
             },
+        })
+
+        // Dune custom
+
+        .state('dbt.spellcasters', {
+            url: 'spellcasters?' + graph_params,
+            controller: 'SpellcastersCtrl',
+            templateUrl: templates.spellcasters,
         })
 }])

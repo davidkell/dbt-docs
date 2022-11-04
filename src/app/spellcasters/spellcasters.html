@@ -1,0 +1,53 @@
+<div class='app-scroll'>
+    <div class="app-links app-sticky">
+        <div class="app-title">
+            <div class="app-frame app-pad app-flush-bottom">
+                <h1>
+                    <span class="break">Spellcasters</span>
+                </h1>
+            </div>
+        </div>
+    </div>
+    <div class="app-details">
+        <div class="app-frame app-pad">
+            <section class="section">
+                <div class="section-target" id="columns"></div>
+                <div class="section-content">
+                    <h6>Contributors</h6>
+                    <div class="panel">
+                        <div class="panel-body">
+                            <div class="table-responsive"
+                                 style="max-height: 800px; overflow-y: scroll;">
+                                <table class="table table-borderless table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th style="background-color: white; position: sticky; top: 0; z-index: 1;">Wizard</th>
+                                            <th style="background-color: white; position: sticky; top: 0; z-index: 1;">Spells</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr
+                                            ng-repeat="spellcaster in spellcasters"
+                                            class="column-row">
+                                            <td>
+                                                <div>
+                                                    <span style="display: flex; flex-direction: row; align-items: center;">
+                                                        <img style="height: 2.5rem; border-radius: 9999px;" src="https://github.com/{{ spellcaster.name }}.png"/>
+                                                        <a style="margin-left: 0.5rem;" href="https://github.com/{{ spellcaster.name }}">{{ spellcaster.name }}</a>
+                                                    </span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class='text-dark'>{{ spellcaster.spells }}</p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

@@ -10,6 +10,9 @@ require('./main');
 require('./overview');
 require('./sources');
 
+// Dune custom
+require('./spellcasters');
+
 require('./index.routes.js');
 
 angular
