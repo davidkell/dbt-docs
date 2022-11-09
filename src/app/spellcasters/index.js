@@ -19,7 +19,7 @@ angular
                 let c = model.meta.contributors || model.meta.contibutors
                 c = Array.isArray(c) ? c : (c || '').split(', ')
                 // e.g. de-duplicate MSilb7 -> msilb7
-                return c.map(n => n.toLowerCase())
+                return c.filter(n => !!n)
             }).flat()
 
             const stats = Object.entries(_.countBy(contributors)).map(([name, spells]) => ({ name, spells}))

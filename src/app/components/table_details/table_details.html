@@ -11,8 +11,8 @@
                                 <div ng-if="['contibutors', 'contributors'].includes(k)">
                                     <dt class="detail-label">{{ k }}</dt>
                                     <dd class="detail-value" style="display: flex; flex-direction: row; align-items: center;" ng-repeat="wizard in v.split(', ')">
-                                        <img style="height: 2.5rem; border-radius: 9999px;" src="https://github.com/{{ wizard }}.png"/>
-                                        <a style="margin-left: 0.5rem;" href="https://github.com/{{ wizard }}">{{ wizard }}</a>
+                                        <img style="height: 2.5rem; width: 2.5rem; border-radius: 9999px;" src="https://davidkell.autocode.dev/spellbook@dev/profile/?name={{ wizard }}"/>
+                                        <a style="margin-left: 0.5rem;" href="https://dune.com/{{ wizard }}">{{ wizard }}</a>
                                     </dd>
                                 </div>
                                 <div ng-if="!['contibutors', 'contributors'].includes(k)">
